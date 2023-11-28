@@ -636,18 +636,13 @@
   [feature = 'amenity_bicycle_parking'],
   [feature = 'amenity_motorcycle_parking'],
   [feature = 'amenity_taxi'] {
-    [zoom >= 14] {
-      polygon-fill: @parking;
-      [zoom >= 15] {
-        line-width: 0.3;
-        line-color: @parking-outline;
-      }
-      [way_pixels >= 4]  { polygon-gamma: 0.75; }
-      [way_pixels >= 64] { polygon-gamma: 0.3;  }
-    }
+    polygon-fill: @parking;
+    line-width: 0.3;
+    line-color: @parking-outline;
+    polygon-gamma: 0.75;
   }
 
-  [feature = 'amenity_parking_space'][zoom >= 18] {
+  [feature = 'amenity_parking_space'] {
     line-width: 0.3;
     line-color: mix(@parking-outline, @parking, 50%);
   }

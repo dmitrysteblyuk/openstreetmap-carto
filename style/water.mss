@@ -146,8 +146,8 @@
   [waterway = 'stream'],
   [waterway = 'ditch'],
   [waterway = 'drain'] {
-    [int_intermittent != 'yes'][zoom >= 14],
-    [zoom >= 15] {
+    [int_intermittent != 'yes'][zoom >= 12],
+    [zoom >= 12] {
       // the additional line of land color is used to provide a background for dashed casings
       [int_tunnel = 'yes'] {
         background/line-width: 2;

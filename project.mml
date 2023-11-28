@@ -14,7 +14,7 @@ _parts:
     srs: *srs
   osm2pgsql: &osm2pgsql
     type: "postgis"
-    dbname: "gis"
+    dbname: "gis-new-zealand"
     key_field: ""
     geometry_field: "way"
     srid: *srid
@@ -2061,6 +2061,8 @@ Layer:
                                        THEN boundary END,
               'leisure_' || CASE WHEN leisure IN ('nature_reserve') THEN leisure END
             ) AS feature,
+            CASE WHEN access IN ('private', 'no', 'customers', 'permit', 'delivery') THEN 'restricted' ELSE 'yes' END AS int_access,
+            tags->'parking' as "parking",
             name,
             CASE WHEN building = 'no' OR building IS NULL THEN 'no' ELSE 'yes' END AS is_building -- always no with the where conditions
           FROM planet_osm_polygon

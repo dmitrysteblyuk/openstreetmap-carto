@@ -43,9 +43,9 @@
 @private-opacity: 0.33;
 
 #amenity-points {
-  [feature = 'tourism_alpine_hut'][zoom >= 13],
-  [feature = 'tourism_wilderness_hut'][zoom >= 13],
-  [feature = 'amenity_shelter'][zoom >= 16] {
+  [feature = 'tourism_alpine_hut'][zoom >= 10],
+  [feature = 'tourism_wilderness_hut'][zoom >= 10],
+  [feature = 'amenity_shelter'][zoom >= 10] {
     marker-file: url('symbols/amenity/shelter.svg');
     [feature = 'tourism_wilderness_hut'] {
       marker-file: url('symbols/tourism/wilderness_hut.svg');
@@ -147,13 +147,7 @@
   }
 
   [feature = 'highway_bus_stop'] {
-    [zoom >= 16][zoom < 17] {
-      marker-file: url('symbols/square.svg');
-      marker-fill: @transportation-icon;
-      marker-width: 6;
-      marker-clip: false;
-    }
-    [zoom >= 17] {
+    [zoom >= 0] {
       marker-file: url('symbols/highway/bus_stop.svg');
       marker-fill: @transportation-icon;
       marker-clip: false;
@@ -865,7 +859,7 @@
 
   [feature = 'shop'] {
     [shop != 'mall'][shop != 'massage'][zoom >= 17],
-    [shop = 'supermarket'][zoom >= 16],
+    [shop = 'supermarket'][zoom >= 10],
     [shop = 'department_store'][zoom >= 16] {
       marker-clip: false;
       marker-fill: @shop-icon;
@@ -881,7 +875,7 @@
       marker-line-width: 0;
     }
 
-    [shop = 'supermarket'][zoom >= 16] {
+    [shop = 'supermarket'][zoom >= 10] {
       marker-file: url('symbols/shop/supermarket.svg');
     }
 
@@ -948,7 +942,7 @@
       marker-file: url('symbols/shop/computer.svg');
     }
 
-    [shop = 'convenience'][zoom >= 18] {
+    [shop = 'convenience'][zoom >= 10] {
       marker-file: url('symbols/shop/convenience.svg');
     }
 
@@ -1405,7 +1399,7 @@
     marker-clip: false;
   }
 
-  [feature = 'natural_spring'][zoom >= 14] {
+  [feature = 'natural_spring'][zoom >= 12] {
     marker-file: url('symbols/natural/spring.svg');
     marker-fill: #7abcec;
     marker-clip: false;
@@ -1467,9 +1461,7 @@
   [feature = 'amenity_bicycle_parking'],
   [feature = 'amenity_motorcycle_parking'],
   [feature = 'amenity_parking_entrance'] {
-    [zoom >= 14][way_pixels > 750]["parking" != 'street_side']["parking" != 'lane'],
-    [zoom >= 17][feature = 'amenity_parking']["parking" != 'street_side']["parking" != 'lane'],
-    [zoom >= 18] {
+    [zoom >= 0] {
       [feature = 'amenity_parking'] { marker-file: url('symbols/amenity/parking.svg'); }
       [feature = 'amenity_parking']["parking" = 'street_side'],
       [feature = 'amenity_parking']["parking" = 'lane'] { 
@@ -2346,7 +2338,7 @@
     }
   }
 
-  [feature = 'natural_spring'][zoom >= 16] {
+  [feature = 'natural_spring'][zoom >= 12] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: @standard-wrap-width;
@@ -2385,8 +2377,8 @@
     text-face-name: @standard-font;
   }
 
-  [feature = 'tourism_alpine_hut'][zoom >= 14],
-  [feature = 'amenity_shelter'][zoom >= 17],
+  [feature = 'tourism_alpine_hut'][zoom >= 10],
+  [feature = 'amenity_shelter'][zoom >= 10],
   [feature = 'leisure_picnic_table'][zoom >= 17],
   [feature = 'tourism_hotel'][zoom >= 17],
   [feature = 'tourism_motel'][zoom >= 17],
@@ -2394,7 +2386,7 @@
   [feature = 'tourism_chalet'][zoom >= 17],
   [feature = 'tourism_guest_house'][zoom >= 17],
   [feature = 'tourism_apartment'][zoom >= 18],
-  [feature = 'tourism_wilderness_hut'][zoom >= 14],
+  [feature = 'tourism_wilderness_hut'][zoom >= 10],
   [feature = 'tourism_camp_site'][zoom >= 17],
   [feature = 'tourism_caravan_site'][zoom >= 17], {
     text-name: "[name]";
@@ -2443,7 +2435,7 @@
   [feature = 'amenity_charging_station'],
   [feature = 'amenity_fuel'],
   [feature = 'amenity_bus_station'] {
-    [zoom >= 17] {
+    [zoom >= 0] {
       text-name: "[name]";
       text-size: @standard-font-size;
       text-wrap-width: @standard-wrap-width;
@@ -2688,7 +2680,7 @@
 
   [feature = 'shop_supermarket'],
   [feature = 'shop_department_store'] {
-    [zoom >= 16] {
+    [zoom >= 10] {
       text-name: "[name]";
       text-size: @standard-font-size;
       text-wrap-width: @standard-wrap-width;
@@ -2942,8 +2934,7 @@
   [feature = 'amenity_bicycle_parking'],
   [feature = 'amenity_motorcycle_parking'],
   [feature = 'amenity_parking_entrance']["parking"='underground'] {
-    [zoom >= 14][way_pixels > 3000],
-    [zoom >= 18] {
+    [zoom >= 0] {
       text-name: "[name]";
       text-size: @standard-font-size;
       text-wrap-width: @standard-wrap-width;

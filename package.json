@@ -1,0 +1,11 @@
+{
+  "name": "openstreetmap-carto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:gravitystorm/openstreetmap-carto.git",
+  "author": "dsteblyuk <dmitry.steblyuk@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "carto": "1.2.0"
+  }
+}
